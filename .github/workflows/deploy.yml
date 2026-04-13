@@ -13,10 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/build
-      - name: Install Railway CLI
-        run: pnpm add --global @railway/cli
       - name: Deploy to Railway
-        run: railway up --service="handsome-solace"
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+        uses: bervProject/railway-deploy@main
+        with:
+          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+          service: "handsome-solace"
