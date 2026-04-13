@@ -16,7 +16,6 @@ export class AppService {
     return emojis[index];
   }
 
-
   getEmojiList(): string[] {
     return ['😊', '😂', '😍', '🤔', '😎'];
   }

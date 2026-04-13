@@ -1,4 +1,9 @@
-import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  CanActivate,
+  ExecutionContext,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { log } from 'console';
 import { Observable } from 'rxjs';
 
@@ -15,7 +20,7 @@ export class AuthGuard implements CanActivate {
     // if (apiKey !== process.env.API_KEY) {
     //   return false;
     // }
-      if (apiKey !== keyFromEnv) {
+    if (apiKey !== keyFromEnv) {
       return false;
     }
     return true;

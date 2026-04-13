@@ -27,7 +27,7 @@ export class AppController {
       browser: request.browser ?? 'Unknown Client',
     };
   }
-  
+
   @Get('list')
   getEmojiList(): string[] {
     return this.appService.getEmojiList();
